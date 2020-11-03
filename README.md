@@ -1,70 +1,50 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# GraphQL With React & Apollo
+This is a video tutorial from Brad Traversy of Traversy Media
 
-## Available Scripts
+## Links
+1. [Home Page for the tutorial](https://codetalks.tv/talk/graphql-with-react-and-apollo-[1]-express-graphql-server-semtj8w04z8)
 
-In the project directory, you can run:
 
-### `yarn start`
+## Part 1: Express GraphQL Server
+### Links
+1. [YouTube video for part 1](https://www.youtube.com/watch?v=SEMTj8w04Z8)
+2. [Github project for server code](https://github.com/bradtraversy/spacex_launch_stats)
+3. [SpaceX API Home Page](https://github.com/r-spacex/SpaceX-API)
+4. [SpaceX API gitdhub project](https://github.com/r-spacex/SpaceX-API)
+5. [SpaceX API Postman Test Page](https://docs.spacexdata.com/):  make sure you are using v.3 and not v.4
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+At end of the server tutorial, these two queries should work in the GraphiQL:
+### Query 1
+```javascript
+{
+  launches {
+    flight_number,
+    mission_name,
+    launch_success,
+    launch_date_local,
+    rocket {
+      rocket_id,
+      rocket_name,
+      rocket_type
+    }
+  }
+}
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Query 2
+```javascript
+{
+  launch(flight_number: 2) {
+    mission_name,
+    launch_year,
+    launch_success,
+    rocket {
+      rocket_name
+    }
+  }
+}
+```
+## Part 2: React & Apollo Setup
+### Links
+1. [Youtube video for part 2](https://www.youtube.com/watch?v=-XwkFm5a9lw)
